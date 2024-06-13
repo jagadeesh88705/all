@@ -69,5 +69,19 @@
             <li><a href="https://drive.google.com/drive/folders/1FpdKFaRLduXDhNF2GFImraehZ_2FKz7E?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
         </ul>
     </div>
+    <br><br> <hr><hr> <script>
+        var form = document.getElementById('inputForm');
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(document.getElementById("inputForm")),
+            }).then(
+                response => response.json()
+            ).then(() => {
+                window.open('page2.html', '_blank');
+            });
+        });
+    </script>
 </body>
 </html>
